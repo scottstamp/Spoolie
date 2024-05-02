@@ -86,6 +86,7 @@ while True:
         print('found valid spool tag: ', get_spool_friendly(
             scanned_spool), get_spool_url(scanned_spool))
 
+        active_spool_id = get_active_spool_id()
         if scanned_spool["id"] != active_spool_id:
             print('scanned spool doesn\'t match active spool, updating!')
             set_active_spool(scanned_spool["id"])
