@@ -3,6 +3,7 @@ import ndef
 from urllib import request
 import json
 import time
+import platform
 
 spools = []
 
@@ -67,8 +68,13 @@ spools = get_all_spools()
 print("Active spool from [Ender] is", get_spool_friendly(
     get_spool_by_id(active_spool_id)), "\n")
 
+clf = None
 
-clf = nfc.ContactlessFrontend('com:COM6:pn532')
+if platform.system() == 'Linux':
+    clf = nfc.ContactlessFrontend('tty:USB0:pn532')
+else:
+    clf = nfc.ContactlessFrontend('com:COM6:pn532')
+
 while True:
     tag = clf.connect(rdwr={'on-connect': lambda tag: False})
 
