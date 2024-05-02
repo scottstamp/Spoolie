@@ -1,0 +1,12 @@
+distlib==0.3.8
+filelock==3.13.3
+future==1.0.0
+iso8601==2.1.0
+libusb1==3.1.0
+ndeflib==0.3.3
+nfcpy==1.0.4
+platformdirs==4.2.0
+pyDes==2.0.1
+pyserial==3.5
+PyYAML==6.0.1
+virtualenv==20.25.1
